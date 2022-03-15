@@ -1,0 +1,14 @@
+#!/bin/sh
+
+pr_chmod () {
+    local path="$1"
+    echo "chmod is $(stat -c %a $path) for $path"
+}
+
+clear
+echo "Hello World!"
+echo
+pr_chmod /
+pr_chmod /usr
+pr_chmod /usr/bin
+pr_chmod /usr/bin/test

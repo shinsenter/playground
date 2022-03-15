@@ -1,0 +1,17 @@
+name: docker/build-push-action/issues/570
+
+on:
+  push:
+    branches:
+      - evidences/build-push-action-570
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build and push
+        uses: docker/build-push-action@v2
+        with:
+          context: "{{defaultContext}}"
+          tags: build-push-action/issues:570
+          push: false
